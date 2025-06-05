@@ -1,7 +1,6 @@
 package kadai_028;
 
 import java.util.HashMap;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Jyanken_Chapter28 {
@@ -31,16 +30,15 @@ public class Jyanken_Chapter28 {
 		return input;
 	}
 	
-	public String getRandom() {
+	public String getMath() {
 		String[] hands = {"r", "p", "s"};
-		Random rand = new Random();
-        int index = rand.nextInt(hands.length);
+        int index = (int)(Math.random() * hands.length);
         return hands[index];
 	}
 	
 	public void playGame() {
 		String myHand = getMyChoice();
-		String randHand = getRandom();
+		String randHand = getMath();
 		
 		System.out.println("あなたの手は" + rps.get(myHand) + "、対戦相手の手は" + rps.get(randHand));
 		
@@ -49,9 +47,9 @@ public class Jyanken_Chapter28 {
 		} else if((myHand.equals("r") && randHand.equals("s") ||
 				 myHand.equals("p") && randHand.equals("r") ||
 				 myHand.equals("s") && randHand.equals("p"))){
-			System.out.println("自分の勝ちです");
+			System.out.println("あなたの勝ちです");
 		} else {
-			System.out.println("自分の負けです");
+			System.out.println("あなたの負けです");
 		}
 			
 	}
